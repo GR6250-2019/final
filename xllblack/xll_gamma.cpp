@@ -29,9 +29,9 @@ static AddIn xai_gamma_put(
     .Category(L"XLL")
     .FunctionHelp(L"Return the Black put value using the Gamma distribution.")
     .Documentation(
-        L"The value of a Black put option is E[max{k - F, 0}]. "
+        L"The value of a Gamma put option is E[max{k - F, 0}]. "
         L"The expected value is k P(F " le_ " k) - f P_(F " le_ " k), "
-        L"where dP_/dP = exp(sigma B_t - sigma^2 t/2). "
+        L"where dP_/dP = G, a Gamma distribution with mean 1 and variance exp(s^2) - 1. "
     )
 );
 double WINAPI xll_gamma_put(double f, double sigma, double k, double t)
