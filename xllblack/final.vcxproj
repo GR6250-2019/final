@@ -152,6 +152,7 @@
     <ClCompile Include="xll_normal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\final.chm" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
