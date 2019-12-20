@@ -40,7 +40,9 @@ namespace fms::gamma {
 	inline std::pair<double, double> convert(double s)
 	{
 		//!!! return (a, b) above
-		return std::pair(s, s);
+        double b = 1 / std::exp(std::pow(s, 2)-1);
+        double a = b;
+		return std::pair(a, b);
 	}
 
 	// Put value is E[(k - F)^+] = k P(F <= k) - E[F 1(F <= k)]
@@ -49,11 +51,11 @@ namespace fms::gamma {
 	{
 		double s = sigma * sqrt(t);
 
-		//!!! delete this comment and the next three lines
-		s = s;
-		f = f;
-		k = k;
+        std::pair<double, double> p = convert(s);
+        double a = p.first;
+        double b = p.second;
+
 		//!!! calculate put value
-		return 0;
+        return f * cdf(k / f, a + 1, b);
 	}
 }
