@@ -28,7 +28,10 @@ static AddIn xai_gamma_put(
 	.Arg(XLL_DOUBLE, L"k", L"is the strike.")
 	.Arg(XLL_DOUBLE, L"t", L"is the time in years to expiration.")
 	.Category(L"XLL")
-	.FunctionHelp(L"Return Black call value.")
+	.FunctionHelp(L"Return Gamma put value.")
+	.Documentation(
+		L"It return the Gamma put value. "
+	)
 );
 
 double WINAPI xll_gamma_put(double f, double sigma, double k, double t)
