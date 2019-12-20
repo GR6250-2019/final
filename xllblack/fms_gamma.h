@@ -42,7 +42,7 @@ namespace fms::gamma {
 	// a = b and b = 1/(exp(s^2) - 1).
 	inline std::pair<double, double> convert(double s)
 	{
-		//!!! return (a, b) above
+		//!!! return (a, b) abov
 		
 		return std::pair<double,double> (1/(std::exp(s * s) - 1), 1 / (std::exp(s * s) - 1));
 		
