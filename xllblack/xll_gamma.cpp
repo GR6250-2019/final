@@ -35,7 +35,7 @@ static AddIn xai_gamma_put(
 	.Documentation(
 		L"The value of a Gamma put option is E[max{k - F, 0}]. "
 		L"The expected value is k P(F " le_ " k) - E[F 1(F " le_ " k)], "
-		L"where F=f G and G is a Gamma distribution random variable, making the variance and mean of the F same as the lognormal situation."
+		L"where F=f G and G is a Gamma distribution random variable, making the variance and mean of the F same as the lognormal situation. "
 	)
 );
 double WINAPI xll_gamma_put(double f, double sigma, double k, double t)
