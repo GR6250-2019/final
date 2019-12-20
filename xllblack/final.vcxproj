@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\final.chm" />
+    <None Include="..\final.xlsx" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
