@@ -20,3 +20,29 @@ test test_gamma([] {
 });
 
 //!!! Implement XLL.GAMMA.PUT
+static AddIn xai_gamma_put(
+	Function(XLL_DOUBLE, L"?xll_gamma_put", L"XLL.GAMMA.PUT")
+	.Arg(XLL_HANDLE, L"f", L"is the forward of the underlying.")
+	.Arg(XLL_DOUBLE, L"sigma", L"is the volatility parameter.")
+	.Arg(XLL_DOUBLE, L"k", L"is the strike of the binary option.")
+	.Arg(XLL_DOUBLE, L"t", L"is the time to maturity.")
+	.FunctionHelp(L"Returns the gamma payoff of put.")
+	.Category(L"XLL")
+	.Documentation(
+	L"The function returns the gamma payoff of put."
+	L"using the forward of underlying, volatility, strike price and time-to-maturity. ")
+);
+double WINAPI xll_gamma_put(double f, double sigma, double k, double t)
+{
+#pragma XLLEXPORT
+	double p = std::numeric_limits<double>::quiet_NaN();
+
+	try {
+		p = fms::gamma::put(f, sigma, k, t);
+	}
+	catch (const std::exception& ex) {
+		XLL_ERROR(ex.what());
+	}
+
+	return p;
+}
