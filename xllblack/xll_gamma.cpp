@@ -70,6 +70,7 @@ static AddIn xai_gamma_put(
 	.Category(L"XLL")
 	.FunctionHelp(L"Return put gamma value.")
 );
+
 double WINAPI xll_gamma_put(double f, double sigma, double k, double t)
 {
 #pragma XLLEXPORT
