@@ -19,7 +19,7 @@ test test_gamma([] {
 
 });
 
-//!!! Implement XLL.GAMMA.PUT
+// Implement XLL.GAMMA.PUT
 
 static AddIn xai_gamma_put(
 	Function(XLL_DOUBLE, L"?xll_gamma_put", L"XLL.GAMMA.PUT")
